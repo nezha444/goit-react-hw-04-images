@@ -16,7 +16,7 @@ export const Modal = ({ largeImageURL, modalClose }) => {
     };
     document.addEventListener('keydown', handleKeyDown);
     return document.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [modalClose]);
 
   return (
     <div
