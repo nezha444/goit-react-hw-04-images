@@ -23,7 +23,7 @@ export const App = () => {
       apiImages
         .getImg(query, page)
         .then(data => {
-          // data.data.hits --- Массив объектов с фото
+          // data.data.hits --- Массив объектов с фот
           if (!data.data.hits.length) {
             console.log('Нет результатов', '😥');
             return;
