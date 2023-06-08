@@ -1,4 +1,5 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export const Modal = ({ largeImageURL, modalClose }) => {
   const handleOverlayClick = event => {
@@ -8,15 +9,14 @@ export const Modal = ({ largeImageURL, modalClose }) => {
   };
 
   useEffect(() => {
+    const handleKeyDown = event => {
+      if (event.key === 'Escape') {
+        modalClose('');
+      }
+    };
     document.addEventListener('keydown', handleKeyDown);
     return document.removeEventListener('keydown', handleKeyDown);
   }, []);
-
-  const handleKeyDown = event => {
-    if (event.key === 'Escape') {
-      modalClose('');
-    }
-  };
 
   return (
     <div
@@ -36,4 +36,8 @@ export const Modal = ({ largeImageURL, modalClose }) => {
       <img src={largeImageURL} alt="img" width="50%" />
     </div>
   );
+};
+Modal.propTypes = {
+  largeImageURL: PropTypes.string.isRequired,
+  modalClose: PropTypes.func.isRequired,
 };

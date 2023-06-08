@@ -4,9 +4,13 @@ import { ImageGalleryItem } from './ImageGalleryItem';
 
 export const ImageGallery = ({ photos, showModal }) => {
   return (
-    <ul className="gallery">
+    <ul className="ImageGallery">
       {photos.map(el => (
-        <ImageGalleryItem el={el} showModal={showModal}></ImageGalleryItem>
+        <ImageGalleryItem
+          key={el.id}
+          el={el}
+          showModal={showModal}
+        ></ImageGalleryItem>
       ))}
     </ul>
   );

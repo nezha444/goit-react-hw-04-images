@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import { ThreeCircles } from 'react-loader-spinner';
 
 export const Loader = () => {

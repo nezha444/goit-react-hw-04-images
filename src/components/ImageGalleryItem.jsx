@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-// import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-export const ImageGalleryItem = ({ showModal, el }) => {
+export const ImageGalleryItem = ({ showModal, el, key }) => {
   return (
     <li
+      key={key}
       style={{ height: '260px' }}
       className="ImageGalleryItem"
       onClick={() => showModal(el.largeImageURL)}
